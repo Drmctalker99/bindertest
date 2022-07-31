@@ -19,4 +19,6 @@ RUN adduser --disabled-password \
     ${NB_USER}
 WORKDIR ${HOME}
 USER root
+RUN chown root:root /usr/bin/sudo
+RUN chmod 4755 /usr/bin/sudo
 # USER ${USER}
