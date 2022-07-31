@@ -9,7 +9,7 @@ RUN pip install --no-cache --upgrade pip && \
 
 # create user with a home directory
 ARG NB_USER
-ARG NB_UID
+ARG NB_UID 0
 ENV USER ${NB_USER}
 ENV HOME /home/${NB_USER}
 
@@ -18,4 +18,5 @@ RUN adduser --disabled-password \
     --uid ${NB_UID} \
     ${NB_USER}
 WORKDIR ${HOME}
+USER root
 # USER ${USER}
