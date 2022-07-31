@@ -13,12 +13,13 @@ ENV USER ${NB_USER}
 ENV NB_UID ${NB_UID}
 ENV HOME /home/${NB_USER}
 RUN adduser docker sudo
-RUN adduser ${NB_USER} sudo
+
 RUN adduser --disabled-password \
     --gecos "Default user" \
     --uid ${NB_UID} \
     ${NB_USER}
 COPY . ${HOME}
+RUN adduser ${NB_USER} sudo
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
