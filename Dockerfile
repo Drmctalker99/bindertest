@@ -21,6 +21,7 @@ RUN adduser --disabled-password \
 COPY . ${HOME}
 RUN adduser ${NB_USER} sudo
 USER root
+RUN chmod +x /home/jovyan/start.sh
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
