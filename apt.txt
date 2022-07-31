@@ -1,3 +1,2 @@
 nano
-ubuntu-mate-desktop
-mate-session
+xfce4
