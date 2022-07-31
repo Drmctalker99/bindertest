@@ -23,4 +23,4 @@ RUN adduser ${NB_USER} sudo
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
-ENTRYPOINT ["start.sh"]
+ENTRYPOINT ["./start.sh"]
